@@ -113,18 +113,18 @@ export default function Home() {
 
   return (
     <main className="bg-zinc-950 flex min-h-screen flex-col items-center justify-between">
-      <div className="grid text-center h-full w-full object-cover lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        <div className="relative">
+      <div className="grid md:flex md:flex-col text-center h-full w-full object-cover lg:max-w-5xl">
+        <div id="top" className="relative md:mt-8 flex flex-col">
           <Image
             src="/avatar.jpg"
-            width={3840}
-            height={2160}
+            width={1080}
+            height={1080}
             alt=""
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full md:w-3/6 md:h-3/6 mx-auto md:rounded-xl"
           />
           <div
             id="header"
-            className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 mt-80"
+            className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 mt-80 md:mt-96"
           >
             <h2 className="text-3xl font-bold">Américo Júnior</h2>
             <p className="">
@@ -157,7 +157,7 @@ export default function Home() {
           <div
             onClick={() => window.open('https://americojunior.com')}
             id="link"
-            className="border-2 rounded-full p-3 mx-4 bg-transparent hover:bg-gray-950 transition 1s"
+            className="border-2 rounded-full p-3 mx-4 bg-transparent cursor-pointer hover:bg-zinc-900 transition 1s"
           >
             <h3 className="font-medium text-lg">Meu Website</h3>
             <p className="text-xs">
@@ -168,7 +168,7 @@ export default function Home() {
           <div
             onClick={() => window.open('https://newsletter.americojunior.com')}
             id="link"
-            className="border-2 rounded-full p-3 mx-4 bg-transparent hover:bg-gray-950 transition 1s"
+            className="border-2 rounded-full p-3 mx-4 bg-transparent cursor-pointer hover:bg-zinc-900 transition 1s"
           >
             <h3 className="font-medium text-lg">Newsletter do Américo</h3>
             <p className="text-xs">
@@ -180,7 +180,7 @@ export default function Home() {
 
         <div
           id="newsletter"
-          className="bg-zinc-900 rounded-3xl mt-8 px-1.5 py-6 space-y-4 mx-4"
+          className="bg-zinc-900 rounded-3xl mt-8 px-1.5 py-6 space-y-4 mx-4 md:mx-72"
         >
           <h2 className="font-bold text-lg">Assine a minha newsletter</h2>
           <p className="text-sm px-2">
@@ -190,16 +190,17 @@ export default function Home() {
 
           <div id="newsletter-form">
             <form className="flex flex-col px-4" onSubmit={handleSubscribe}>
-              <input
+              {/* <input
                 className="p-3 px-4 rounded-full border bg-transparent"
                 type="email"
                 placeholder="seu@email.com"
-              />
+              /> */}
               <button
-                className="bg-white text-zinc-950 p-3 px-4 my-4 rounded-full"
+                onClick={() => window.open('https://newsletter.americojunior.com/subscribe')}
+                className="bg-white text-zinc-950 p-3 px-4 my-4 rounded-full hover:bg-zinc-900 hover:text-white hover:border transition"
                 type="submit"
               >
-                Assinar
+                Assinar agora
               </button>
             </form>
           </div>
@@ -217,7 +218,14 @@ export default function Home() {
                 width={200}
                 height={200}
                 alt=""
-                className="rounded-l-lg"
+                className="rounded-l-lg md:hidden"
+              />
+              <Image
+                src="/hackeando-a-produtividade.webp"
+                width={200}
+                height={200}
+                alt=""
+                className="rounded-l-lg hidden md:block"
               />
             </div>
             <div id="content" className="justify-start text-left px-4 py-3">
@@ -229,7 +237,7 @@ export default function Home() {
                 0 US$
               </p>
 
-              <button onClick={() => window.open('https://americojunior.gumroad.com/l/hackeando-a-produtividade')} className="bg-white text-zinc-950 font-bold rounded-full p-1 px-8 hover:bg-gray-950 transition 1s">
+              <button onClick={() => window.open('https://americojunior.gumroad.com/l/hackeando-a-produtividade')} className="bg-white font-normal text-zinc-950 rounded-full p-1 px-8 hover:bg-zinc-900 hover:text-white hover:border transition 1s">
                 Baixar agora
               </button>
             </div>
@@ -242,7 +250,14 @@ export default function Home() {
                 width={168}
                 height={160}
                 alt=""
-                className="rounded-l-lg"
+                className="rounded-l-lg md:hidden"
+              />
+              <Image
+                src="/superprodutivo.png"
+                width={200}
+                height={178}
+                alt=""
+                className="rounded-l-lg hidden md:block"
               />
             </div>
             <div id="content" className="justify-start text-left px-4 py-3">
@@ -254,7 +269,7 @@ export default function Home() {
                 16 US$
               </p>
 
-              <button onClick={() => window.open('https://americojunior.gumroad.com/l/superprodutivo')} className="bg-white text-zinc-950 font-bold rounded-full p-1 px-5 hover:bg-gray-950 transition 1s">
+              <button onClick={() => window.open('https://americojunior.gumroad.com/l/superprodutivo')} className="bg-white font-normal text-zinc-950 rounded-full p-1 px-5 hover:bg-zinc-900 hover:text-white hover:border transition 1s">
                 Comprar agora
               </button>
             </div>
